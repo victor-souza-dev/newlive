@@ -12,17 +12,22 @@ export const DrawerStyle = styled(Drawer)(({ theme, width }) => ({
     margin: "0",
     width: width === true ? "200px" : "70px",
     transition: "width 0.5s",
-    paddingTop: "10px",
     backgroundColor: theme.colors.backgroundColor,
   },
+}));
+
+export const ContainerIcons = styled("div")(() => ({
+  width: "100%",
+  overflow: "hidden",
 }));
 
 export const ContainerIconOpenSidebar = styled("div")(
   ({ width }: { width: boolean }) => ({
     width: "100%",
     display: "flex",
-    paddingLeft: width ? "290px" : "20px",
+    paddingLeft: width ? "150px" : "10px",
     paddingBottom: "15px",
+    paddingTop: "10px",
     transition: "0.5s",
   })
 );
@@ -35,9 +40,41 @@ export const IconOpenSidebar = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-export const IconListSidebar = styled("div")(({ theme }) => ({
+export const ContainerListIcons = styled("div")(() => ({
+  height: "85%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  overflowY: "auto",
+  overflowX: "hidden",
+  scrollbarWidth: "thin",
+  scrollbarColor: "gray #F5F5F5",
+  "&::-webkit-scrollbar": {
+    width: "0px",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "gray",
+    borderRadius: "3px",
+  },
+  "&::-webkit-scrollbar-track": {
+    backgroundColor: "#F5F5F5",
+  },
+  "&::-ms-overflow-style": "none",
+  "scrollbar-width": "thin",
+  "&::-webkit-scrollbar-corner": {
+    display: "none",
+  },
+}));
+
+export const EndIconSidebar = styled("div")(({ theme }) => ({
   marginRight: "0 !important",
   marginLeft: "0 !important",
-  marginBottom: "10px",
   color: theme.colors.textColor,
+}));
+
+export const IconListMenu = styled(IconButton)(({ theme }) => ({
+  "&.MuiIconButton-root": {
+    margin: "5px 0",
+    color: theme.colors.textColor,
+  },
 }));

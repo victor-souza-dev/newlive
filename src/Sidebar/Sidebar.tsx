@@ -1,27 +1,29 @@
 import {
   ContainerIconOpenSidebar,
+  ContainerIcons,
   DrawerStyle,
-  IconListSidebar,
+  EndIconSidebar,
   IconOpenSidebar,
+  IconListMenu,
+  ContainerListIcons,
 } from "./Drawer.style";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import Divider from "@mui/material/Divider";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { SwitchThemeIcon } from "../SwitchThemeIcon/SwitchThemeIcon";
-import { IconButtonStyled } from "../styles/IconButtonStyled";
+import HomeIcon from "@mui/icons-material/Home";
 
 export function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
 
   return (
-    <div>
-      <DrawerStyle
-        variant={"permanent"}
-        open={sidebar}
-        onClose={() => setSidebar(false)}
-        width={sidebar}
-      >
+    <DrawerStyle
+      variant={"permanent"}
+      open={sidebar}
+      onClose={() => setSidebar(false)}
+      width={sidebar}
+    >
+      <ContainerIcons>
         <ContainerIconOpenSidebar width={sidebar}>
           <IconOpenSidebar
             size="large"
@@ -34,18 +36,15 @@ export function Sidebar() {
             {!sidebar ? <MenuIcon /> : <ChevronLeftIcon />}
           </IconOpenSidebar>
         </ContainerIconOpenSidebar>
-        <Divider />
-        <IconListSidebar>
-          <IconButtonStyled>
-            <ChevronLeftIcon />
-          </IconButtonStyled>
-        </IconListSidebar>
-        <IconListSidebar>
-          <SwitchThemeIcon />
-        </IconListSidebar>
-        {/* <HeaderSidebar closedSidebar={setSidebar} />
-        <SwitchThemeIcon /> */}
-      </DrawerStyle>
-    </div>
+        <ContainerListIcons>
+          <IconListMenu>
+            <HomeIcon />
+          </IconListMenu>
+        </ContainerListIcons>
+      </ContainerIcons>
+      <EndIconSidebar>
+        <SwitchThemeIcon />
+      </EndIconSidebar>
+    </DrawerStyle>
   );
 }
