@@ -1,13 +1,12 @@
-import ButtonAppBar from "./AppBar/AppBar";
+import { PrivateRoute } from "./Context/PrivateRoute/PrivateRoute";
 import { SwitchThemeProvider } from "./Context/SwitchContext/SwitchContextProvider";
-import { Sidebar } from "./Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <SwitchThemeProvider>
-        <ButtonAppBar></ButtonAppBar>
-        <Sidebar />
+        <Outlet />
       </SwitchThemeProvider>
     </>
   );

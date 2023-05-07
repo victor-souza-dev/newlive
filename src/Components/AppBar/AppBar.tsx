@@ -1,7 +1,7 @@
 import Toolbar from "@mui/material/Toolbar";
-import { StyledAppBar, StyledContainerIconsAppBar } from "./AppBar.style";
 import { Notifications } from "../Notifications/Notifications";
 import { Profile } from "../Profile/Profile";
+import { StyledAppBar, StyledContainerIconsAppBar } from "./AppBar.style";
 
 export default function ButtonAppBar() {
   return (

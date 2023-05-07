@@ -2,7 +2,7 @@ import { Drawer } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import styled from "styled-components";
 
-export const DrawerStyle = styled(Drawer)(({ theme, width }) => ({
+export const DrawerStyle = styled(Drawer)(({ theme, widthsidebar }) => ({
   "& .MuiDrawer-paper": {
     display: "flex",
     flexDirection: "column",
@@ -10,9 +10,10 @@ export const DrawerStyle = styled(Drawer)(({ theme, width }) => ({
     justifyContent: "space-between",
     overflow: "hidden",
     margin: "0",
-    width: width === true ? "200px" : "70px",
+    width: widthsidebar == "true" ? "200px" : "70px",
     transition: "width 0.5s",
-    backgroundColor: theme.colors.backgroundColor,
+    backgroundColor: theme.colors.backgroundColorSidebar,
+    borderColor: theme.colors.border,
   },
 }));
 
@@ -21,16 +22,14 @@ export const ContainerIcons = styled("div")(() => ({
   overflow: "hidden",
 }));
 
-export const ContainerIconOpenSidebar = styled("div")(
-  ({ width }: { width: boolean }) => ({
-    width: "100%",
-    display: "flex",
-    paddingLeft: width ? "150px" : "10px",
-    paddingBottom: "15px",
-    paddingTop: "10px",
-    transition: "0.5s",
-  })
-);
+export const ContainerIconOpenSidebar = styled("div")(({ widthsidebar }) => ({
+  width: "100%",
+  display: "flex",
+  paddingLeft: widthsidebar === "true" ? "150px" : "10px",
+  paddingBottom: "15px",
+  paddingTop: "10px",
+  transition: "0.5s",
+}));
 
 export const IconOpenSidebar = styled(IconButton)(({ theme }) => ({
   marginRight: "0 !important",
@@ -73,6 +72,8 @@ export const EndIconSidebar = styled("div")(({ theme }) => ({
 }));
 
 export const IconListMenu = styled(IconButton)(({ theme }) => ({
+  fontSize: "14px !important",
+  transition: "0.5s",
   "&.MuiIconButton-root": {
     margin: "5px 0",
     color: theme.colors.textColor,

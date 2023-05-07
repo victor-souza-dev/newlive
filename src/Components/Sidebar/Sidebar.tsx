@@ -4,7 +4,6 @@ import {
   DrawerStyle,
   EndIconSidebar,
   IconOpenSidebar,
-  IconListMenu,
   ContainerListIcons,
 } from "./Drawer.style";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { SwitchThemeIcon } from "../SwitchThemeIcon/SwitchThemeIcon";
 import HomeIcon from "@mui/icons-material/Home";
+import { IconListMenuSidebar } from "../IconListMenuSidebar/IconListMenuSidebar";
 
 export function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
@@ -21,10 +21,10 @@ export function Sidebar() {
       variant={"permanent"}
       open={sidebar}
       onClose={() => setSidebar(false)}
-      width={sidebar}
+      widthsidebar={sidebar.toString()}
     >
       <ContainerIcons>
-        <ContainerIconOpenSidebar width={sidebar}>
+        <ContainerIconOpenSidebar widthsidebar={sidebar.toString()}>
           <IconOpenSidebar
             size="large"
             edge="start"
@@ -37,9 +37,9 @@ export function Sidebar() {
           </IconOpenSidebar>
         </ContainerIconOpenSidebar>
         <ContainerListIcons>
-          <IconListMenu>
+          <IconListMenuSidebar open={sidebar}>
             <HomeIcon />
-          </IconListMenu>
+          </IconListMenuSidebar>
         </ContainerListIcons>
       </ContainerIcons>
       <EndIconSidebar>
