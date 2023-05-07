@@ -8,22 +8,23 @@ import {
 } from "./Home.style";
 import { BarHorizontal } from "../../Components/BarHorizontalGrafic/BarHorizontalGrafic";
 import { useState, useEffect } from "react";
-import { getTotalVendas } from "../../api/GetTotalVendas";
+import getTotalVendas from "../../api/GetTotalVendas";
 import { Doug } from "../../Components/DoughtGrafic/DoughtGrafic";
+import { AirlineSeatIndividualSuiteRounded } from "@mui/icons-material";
 
 export function Home() {
-  // const [totalVendas, setTotalVendas] = useState({});
-
-  // useEffect(() => {
-  //   getTotalVendas({
-  //     ano: 2023,
-  //     mes: 5,
-  //     day: 6,
-  //     daylimit: 6,
-  //   }).then((response: any) => setTotalVendas(response));
-  // }, []);
-
-  // console.log(totalVendas);
+  const [quantidade, setQuantidade] = useState([]);
+  const [valor, setValor] = useState([]);
+  
+  useEffect(() => {
+    getTotalVendas().then((response: any) => {
+      const data = response.data.data;
+      data.forEach((item: any) => {
+        setValor((prevValor) => [...prevValor, item.valor]);
+        setQuantidade((prevQuantidade) => [...prevQuantidade, item.quantidade]);
+      });
+    });
+  }, []);
 
   return (
     <StyledHome>
