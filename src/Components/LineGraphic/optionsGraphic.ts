@@ -6,7 +6,7 @@ export function options(theme: DefaultTheme) {
     plugins: {
       title: {
         display: true,
-        text: 'Tendência',
+        text: 'Volume',
         color: `${theme.colors.textColor}`,
       },
       legend: {
