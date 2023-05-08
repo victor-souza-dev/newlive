@@ -38,9 +38,9 @@
 
 export function languageColors(data: string): string {
   switch (data?.toLocaleLowerCase()) {
-    case "janeiro":
+    case "janeiro" || "2023":
       return "#d84924";
-    case "fevereiro":
+    case "fevereiro" || "2022":
       return "#2449d8";
     case "março":
       return "#ead41c";

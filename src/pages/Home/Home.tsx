@@ -7,17 +7,17 @@ import {
   StyledSectionGraphicsSecondary,
 } from "./Home.style";
 import { BarHorizontal } from "../../Components/BarHorizontalGrafic/BarHorizontalGrafic";
-import { useState, useEffect } from "react";
-import getTotalVendas from "../../api/GetTotalVendas";
 import { Doug } from "../../Components/DoughtGrafic/DoughtGrafic";
-import { AirlineSeatIndividualSuiteRounded } from "@mui/icons-material";
+import { useValoresPorAno } from "../../api/useValoresPorAno";
 
 export function Home() {
+  const data = useValoresPorAno();
+
   return (
     <StyledHome>
       <StyledMainDashboard>
         <StyledPaperGraphicPrimary variant="outlined" square>
-          <LineGraphic data={{ janeiro: 15, fevereiro: 22 }} />
+          <LineGraphic data={data} />
         </StyledPaperGraphicPrimary>
         <StyledSectionGraphicsSecondary>
           <StyledPaperGraphicGeneric variant="outlined" square w={"45%"}>

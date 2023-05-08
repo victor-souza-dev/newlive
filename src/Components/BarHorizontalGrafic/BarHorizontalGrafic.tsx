@@ -13,7 +13,7 @@ import { useTheme } from "../../Hooks/useTheme";
 import { weaksList } from "../../utils/weaksList";
 import { StyledBarContainer } from "./BarcContainer.styles";
 import { useState, useEffect } from "react";
-import getTotalVendas from "../../api/GetTotalVendas";
+import { getTotalVendas } from "../../api/GetTotalVendas";
 
 type BarHorizontalProps = {
   title: string;
