@@ -14,10 +14,10 @@ export function SwitchThemeProvider({
 }: PropsSwitchThemeProvider): JSX.Element {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  // useEffect(() => {
-  //   const localTheme = localStorage.getItem("themeDefault");
-  //   setIsDarkTheme(localTheme === "true");
-  // }, []);
+  useEffect(() => {
+    const localTheme = localStorage.getItem("themeDefault");
+    setIsDarkTheme(localTheme === "true");
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setIsDarkTheme((prevIsDarkTheme) => {
