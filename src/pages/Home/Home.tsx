@@ -24,7 +24,7 @@ export function Home() {
             <Doug></Doug>
           </StyledPaperGraphicGeneric>
           <StyledPaperGraphicGeneric variant="outlined" square w={"40%"}>
-            <BarHorizontal title="Faturamento"></BarHorizontal>
+            <BarHorizontal title="Faturamento" dt={data}></BarHorizontal>
           </StyledPaperGraphicGeneric>
         </StyledSectionGraphicsSecondary>
       </StyledMainDashboard>

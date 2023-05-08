@@ -22,23 +22,13 @@ type BarHorizontalProps = {
 
 export function BarHorizontal({ title = "", dt = [] }: BarHorizontalProps) {
   const theme = useTheme();
-  const [valor, setValor] = useState([]);
-
-  useEffect(() => {
-    getTotalVendas().then((response: any) => {
-      const data = response.data.data;
-      data.forEach((item: any) => {
-        setValor((prevValor) => [...prevValor, item.valor]);
-      });
-    });
-  }, []);
 
   const data = {
     labels: weaksList(),
     datasets: [
       {
-        label: "Receita",
-        data: valor.slice(12, 17),
+        label: `Receita ${dt[0]?.label}`,
+        data: dt[0]?.data,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
