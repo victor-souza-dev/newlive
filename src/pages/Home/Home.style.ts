@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 
 export const StyledHome = styled("div")(() => ({
   marginLeft: "70px",
-  paddingBottom: "20px",
+  paddingBottom: "50px",
   display: "flex",
   minHeight: "600px",
   flexDirection: "column",
@@ -21,11 +21,11 @@ export const StyledPaperGraphicPrimary = styled(Paper)(({ theme }) => ({
 }));
 
 export const StyledMainDashboard = styled("main")(() => ({
-  marginTop: "40px !important",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   margin: "0 105px !important",
+  marginTop: "40px !important",
 }));
 
 export const StyledSectionGraphicsSecondary = styled("section")(() => ({

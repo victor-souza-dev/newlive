@@ -15,16 +15,17 @@ import { AirlineSeatIndividualSuiteRounded } from "@mui/icons-material";
 export function Home() {
   const [quantidade, setQuantidade] = useState([]);
   const [valor, setValor] = useState([]);
-  
-  useEffect(() => {
-    getTotalVendas().then((response: any) => {
-      const data = response.data.data;
-      data.forEach((item: any) => {
-        setValor((prevValor) => [...prevValor, item.valor]);
-        setQuantidade((prevQuantidade) => [...prevQuantidade, item.quantidade]);
-      });
-    });
-  }, []);
+
+  // useEffect(() => {
+  //   image.png;
+  //   getTotalVendas().then((response: any) => {
+  //     const data = response.data.data;
+  //     data.forEach((item: any) => {
+  //       setValor((prevValor) => [...prevValor, item.valor]);
+  //       setQuantidade((prevQuantidade) => [...prevQuantidade, item.quantidade]);
+  //     });
+  //   });
+  // }, []);
 
   return (
     <StyledHome>

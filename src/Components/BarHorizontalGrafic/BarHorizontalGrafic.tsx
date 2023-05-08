@@ -26,9 +26,9 @@ export function BarHorizontal({ title = "", dt = [] }: BarHorizontalProps) {
     datasets: [
       {
         label: "Vendas",
-        data: [12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3, 5, 2],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        data: [12, 19, 3, 5, 2, 0, 19, 3, 5, 2, 12, 19, 3, 5, 2],
+        borderColor: "rgb(0, 255, 30)",
+        backgroundColor: "rgb(0, 255, 30)",
       },
     ],
   };

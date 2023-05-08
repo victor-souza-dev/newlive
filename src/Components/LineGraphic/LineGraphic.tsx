@@ -34,13 +34,13 @@ export function LineGraphic({ data = {} }) {
         labels: weaksList(),
         datasets: [
           {
-            label: weaksList()[0],
+            label: "Aqui",
             data: [15, 22, 18, 2, 15, 22, 18, 2, 15, 22, 18, 2],
             borderColor: languageColors(weaksList()[0]),
             backgroundColor: languageColors(weaksList()[0]),
           },
           {
-            label: weaksList()[1],
+            label: "Cabeçudo",
             data: [2, 5, 13, 30, 2, 5, 13, 30, 2, 5, 13, 30],
             borderColor: languageColors(weaksList()[1]),
             backgroundColor: languageColors(weaksList()[1]),
