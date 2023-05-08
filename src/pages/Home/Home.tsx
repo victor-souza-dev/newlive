@@ -13,18 +13,7 @@ import { Doug } from "../../Components/DoughtGrafic/DoughtGrafic";
 import { AirlineSeatIndividualSuiteRounded } from "@mui/icons-material";
 
 export function Home() {
-  const [quantidade, setQuantidade] = useState([]);
-  const [valor, setValor] = useState([]);
-  
-  useEffect(() => {
-    getTotalVendas().then((response: any) => {
-      const data = response.data.data;
-      data.forEach((item: any) => {
-        setValor((prevValor) => [...prevValor, item.valor]);
-        setQuantidade((prevQuantidade) => [...prevQuantidade, item.quantidade]);
-      });
-    });
-  }, []);
+
 
   return (
     <StyledHome>
@@ -37,7 +26,7 @@ export function Home() {
             <Doug></Doug>
           </StyledPaperGraphicGeneric>
           <StyledPaperGraphicGeneric variant="outlined" square w={"40%"}>
-            <BarHorizontal title="eai meu cupincha"></BarHorizontal>
+            <BarHorizontal title="Faturamento"></BarHorizontal>
           </StyledPaperGraphicGeneric>
         </StyledSectionGraphicsSecondary>
       </StyledMainDashboard>

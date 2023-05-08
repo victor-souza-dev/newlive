@@ -12,6 +12,8 @@ import { optionsGraphicBarHorizontal } from "./options";
 import { useTheme } from "../../Hooks/useTheme";
 import { weaksList } from "../../utils/weaksList";
 import { StyledBarContainer } from "./BarcContainer.styles";
+import { useState,useEffect } from "react";
+import getTotalVendas from "../../api/GetTotalVendas";
 
 type BarHorizontalProps = {
   title: string;
@@ -20,13 +22,23 @@ type BarHorizontalProps = {
 
 export function BarHorizontal({ title = "", dt = [] }: BarHorizontalProps) {
   const theme = useTheme();
+  const [valor, setValor] = useState([]);
+  
+  useEffect(() => {
+    getTotalVendas().then((response: any) => {
+      const data = response.data.data;
+      data.forEach((item: any) => {
+        setValor((prevValor) => [...prevValor, item.valor]);
+      });
+    });
+  }, []);
 
   const data = {
     labels: weaksList(),
     datasets: [
       {
-        label: "Vendas",
-        data: [12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3, 5, 2],
+        label: "Receita",
+        data: valor.slice(12,17),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
