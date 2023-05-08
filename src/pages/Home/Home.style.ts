@@ -3,15 +3,25 @@ import Paper from "@mui/material/Paper";
 
 export const StyledHome = styled("div")(() => ({
   marginLeft: "70px",
-  paddingBottom: "50px",
   display: "flex",
-  minHeight: "600px",
+  height: "100%",
+  paddingBottom: "20px",
   flexDirection: "column",
   alignItems: "center",
 }));
 
+export const StyledMainDashboard = styled("main")(() => ({
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  margin: "0 105px !important",
+  marginTop: "20px !important",
+}));
+
 export const StyledPaperGraphicPrimary = styled(Paper)(({ theme }) => ({
-  width: "70.8vw",
+  width: "72.1vw",
+  height: "32vh",
   padding: "20px",
   borderTop: `4px solid ${theme.colors.border} !important`,
   backgroundColor: `${theme.colors.backgroundColor} !important`,
@@ -20,25 +30,18 @@ export const StyledPaperGraphicPrimary = styled(Paper)(({ theme }) => ({
   borderColor: `${theme.colors.border} !important`,
 }));
 
-export const StyledMainDashboard = styled("main")(() => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  margin: "0 105px !important",
-  marginTop: "40px !important",
-}));
-
 export const StyledSectionGraphicsSecondary = styled("section")(() => ({
   width: "100%",
   display: "flex",
-  height: "250px",
+  height: "150px",
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-between",
+  marginBottom: "20px",
 }));
 
 export const StyledPaperGraphicGeneric = styled(Paper)(
-  ({ theme, w = "auto", h = "auto" }) => ({
+  ({ theme, w = "auto", h = "100%" }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -47,7 +50,7 @@ export const StyledPaperGraphicGeneric = styled(Paper)(
     padding: "20px",
     borderTop: `4px solid ${theme.colors.border} !important`,
     backgroundColor: `${theme.colors.backgroundColor} !important`,
-    marginTop: "40px",
+    marginTop: "20px",
     borderTopLeftRadius: "10px",
     borderColor: `${theme.colors.border} !important`,
     borderTopRightRadius: "10px",

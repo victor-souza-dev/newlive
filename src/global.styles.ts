@@ -7,6 +7,13 @@ export const GlobalStyles = createGlobalStyle(({ theme }) => ({
     border: "0",
   },
   "& body": {
+    height: "100vh",
+    overflowY: "hidden",
     backgroundColor: theme.colors.backgroundColor,
+  },
+  "@media (max-width: 659px)": {
+    "& body": {
+      overflowY: "auto",
+    },
   },
 }));

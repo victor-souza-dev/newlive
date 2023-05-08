@@ -20,10 +20,10 @@ export function Home() {
           <LineGraphic data={data} />
         </StyledPaperGraphicPrimary>
         <StyledSectionGraphicsSecondary>
-          <StyledPaperGraphicGeneric variant="outlined" square w={"45%"}>
+          <StyledPaperGraphicGeneric variant="outlined" square w={"42%"}>
             <Doug></Doug>
           </StyledPaperGraphicGeneric>
-          <StyledPaperGraphicGeneric variant="outlined" square w={"40%"}>
+          <StyledPaperGraphicGeneric variant="outlined" square w={"42%"}>
             <BarHorizontal title="Faturamento" dt={data}></BarHorizontal>
           </StyledPaperGraphicGeneric>
         </StyledSectionGraphicsSecondary>
