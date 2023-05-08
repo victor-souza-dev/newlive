@@ -40,7 +40,7 @@ export function Doug() {
       <Doughnut
         data={data}
         options={optionsGraphicDought(theme)}
-        style={{ width: "70%" }}
+        style={{ width: "80%" }}
       />
     </ChartContainer>
   );

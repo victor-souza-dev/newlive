@@ -5,21 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Line } from "react-chartjs-2";
 import { StyledContainerLineGraphic } from "./ContainerLineGraphic.style";
 import { useTheme } from "../../Hooks/useTheme";
-
-const meses = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
+import { weaksList } from "../../utils/weaksList";
 
 export function LineGraphic({ data = {} }) {
   const [chart, setChart] = useState<Chart>();
@@ -45,19 +31,19 @@ export function LineGraphic({ data = {} }) {
   useMemo(() => {
     if (data) {
       setChartData({
-        labels: meses,
+        labels: weaksList(),
         datasets: [
           {
-            label: meses[0],
+            label: weaksList()[0],
             data: [15, 22, 18, 2, 15, 22, 18, 2, 15, 22, 18, 2],
-            borderColor: languageColors(meses[0]),
-            backgroundColor: languageColors(meses[0]),
+            borderColor: languageColors(weaksList()[0]),
+            backgroundColor: languageColors(weaksList()[0]),
           },
           {
-            label: meses[1],
+            label: weaksList()[1],
             data: [2, 5, 13, 30, 2, 5, 13, 30, 2, 5, 13, 30],
-            borderColor: languageColors(meses[1]),
-            backgroundColor: languageColors(meses[1]),
+            borderColor: languageColors(weaksList()[1]),
+            backgroundColor: languageColors(weaksList()[1]),
           },
         ],
       });

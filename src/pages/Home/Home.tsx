@@ -32,11 +32,11 @@ export function Home() {
           <LineGraphic data={{ janeiro: 15, fevereiro: 22 }} />
         </StyledPaperGraphicPrimary>
         <StyledSectionGraphicsSecondary>
-          <StyledPaperGraphicGeneric variant="outlined" square w={"50%"}>
+          <StyledPaperGraphicGeneric variant="outlined" square w={"45%"}>
             <Doug></Doug>
           </StyledPaperGraphicGeneric>
-          <StyledPaperGraphicGeneric variant="outlined" square>
-            <BarHorizontal></BarHorizontal>
+          <StyledPaperGraphicGeneric variant="outlined" square w={"40%"}>
+            <BarHorizontal title="eai meu cupincha"></BarHorizontal>
           </StyledPaperGraphicGeneric>
         </StyledSectionGraphicsSecondary>
       </StyledMainDashboard>

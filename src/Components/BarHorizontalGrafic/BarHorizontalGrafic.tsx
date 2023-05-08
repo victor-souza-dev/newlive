@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,57 +6,39 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { optionsGraphicBarHorizontal } from "./options";
+import { useTheme } from "../../Hooks/useTheme";
+import { weaksList } from "../../utils/weaksList";
+import { StyledBarContainer } from "./BarcContainer.styles";
 
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-export const options = {
-  indexAxis: 'y' as const,
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'right' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Horizontal Bar Chart',
-    },
-  },
+type BarHorizontalProps = {
+  title: string;
+  dt: Array<any>;
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+export function BarHorizontal({ title = "", dt = [] }: BarHorizontalProps) {
+  const theme = useTheme();
 
-const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data:  [12, 19, 3, 5, 2, 3],
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-  ],
-};
+  const data = {
+    labels: weaksList(),
+    datasets: [
+      {
+        label: "Vendas",
+        data: [12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3, 5, 2],
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
 
-
-export function BarHorizontal() {
   return (
-        <barContainer>
-            <Bar options={options} data={data} />
-        </barContainer>
-  )
+    <StyledBarContainer>
+      <Bar
+        options={optionsGraphicBarHorizontal({ theme, title })}
+        data={data}
+      />
+    </StyledBarContainer>
+  );
 }

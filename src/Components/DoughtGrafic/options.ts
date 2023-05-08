@@ -8,6 +8,9 @@ export function optionsGraphicDought(theme: DefaultTheme) {
         align: "center" as const,
         labels: {
           boxWidth: 15,
+          font: {
+            size: 10,
+          },
           padding: 25,
           color: `${theme.colors.textColor}`,
         },
