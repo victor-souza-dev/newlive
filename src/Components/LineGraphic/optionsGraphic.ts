@@ -4,6 +4,11 @@ import { DefaultTheme } from "styled-components";
 export function options(theme: DefaultTheme) {
   const options: ChartOptions<"line"> = {
     plugins: {
+      title: {
+        display: true,
+        text: 'Volume',
+        color: `${theme.colors.textColor}`,
+      },
       legend: {
         position: "right" as const,
         align: "center" as const,
