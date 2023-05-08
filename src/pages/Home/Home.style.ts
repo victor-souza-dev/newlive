@@ -46,7 +46,7 @@ export const StyledPaperGraphicGeneric = styled(Paper)(
     alignItems: "center",
     justifyContent: "center",
     width: w,
-    height: h,
+    height: "30vh",
     padding: "20px",
     borderTop: `4px solid ${theme.colors.border} !important`,
     backgroundColor: `${theme.colors.backgroundColor} !important`,
